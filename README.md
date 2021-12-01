@@ -13,6 +13,6 @@ For information about Advent of Code check here: <https://adventofcode.com/2021/
 
 ## Progress
 
-1 out of 50 stars.
+2 out of 50 stars.
 
-![](https://progress-bar.dev/2)
+![](https://progress-bar.dev/4)
