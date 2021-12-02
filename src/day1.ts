@@ -1,3 +1,4 @@
+import { input1 } from './inputs/input1';
 
 export const CountIncrease = (input:string) => {
   const numbers = input.split('\n').map((x) => Number(x));
@@ -30,3 +31,8 @@ export const CountIncreaseWindow = (input:string) => {
 
   return increase;
 }
+
+const count = CountIncrease(input1);
+console.log('day1, part1: ', count);
+const count2 = CountIncreaseWindow(input1);
+console.log('day1, part2: ', count2);

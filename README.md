@@ -13,6 +13,20 @@ For information about Advent of Code check here: <https://adventofcode.com/2021/
 
 ## Progress
 
-2 out of 50 stars.
+4 out of 50 stars.
 
-![](https://progress-bar.dev/4)
+![progress bar 8 percent](https://progress-bar.dev/8)
+
+## Running locally
+
+Ran and tested with node v16, start by installing packages with
+
+`> npm i`
+
+You can run solutions with
+
+`> npm start`
+
+You can start tests with
+
+`> npm test`
