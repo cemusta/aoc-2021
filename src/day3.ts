@@ -1,37 +1,72 @@
-import { input } from "./inputs/input3";
+import { input, sample } from "./inputs/input3";
+
+type findCommonBitFunction = (arr: Array<string>, index: number) => 1 | 0;
+
+export const findMostCommonBit =( arr: Array<string>, index: number ): 1 | 0 => {
+    let count = arr.map( str=> Number(str[index])).reduce((a,b)=>a+b);
+
+    if(count >= arr.length / 2) {
+        return 1;
+    }
+
+    return 0;
+};
+
+export const findLeastCommonBit =( arr: Array<string>, index: number ): 1 | 0 => {
+    let count = arr.map( str=> Number(str[index])).reduce((a,b)=>a+b);
+
+    if(count < arr.length / 2) {
+        return 1;
+    }
+
+    return 0;
+};
 
 export const CalculateRates = ( inputString: string ) => {
     
     const binaries = inputString.split('\n');
-    let bitCounts = new Array(binaries[0].length).fill(0);
 
-    for(let binary of binaries) {
-        // console.log(binary);
-        for(let [i, bit] of binary.split('').entries()) {   
-           if(bit === '1') {
-            bitCounts[i]++;
-           }
-        }   
+    const gammaArr = [];
+    const epsilonArr = [];
+
+    for(let i = 0; i < binaries[0].length; i++) {
+        gammaArr.push(findMostCommonBit(binaries, i));
+        epsilonArr.push(findLeastCommonBit(binaries, i));
     }
 
-    const gammaRate = bitCounts.map((val)=> {  
-        if(val >= binaries.length / 2) {
-            return 1;
-        }
-        return 0;
-    }).map(val=>val.toString(2)).join('');
+    const gammaRate = gammaArr.map(val=>val.toString(2)).join('');
+    const epsilonRate = epsilonArr.map(val=>val.toString(2)).join('');
 
-    const epsilonRate = bitCounts.map((val)=> {  
-        if(val >= binaries.length / 2) {
-            return 0;
-        }
-        return 1;
-    }).map(val=>val.toString(2)).join('');
-
-    // console.log( parseInt(gammaRate, 2), parseInt(epsilonRate, 2))
-
-    return [gammaRate, epsilonRate];
+    return [parseInt(gammaRate,2), parseInt(epsilonRate,2)];
 }
 
 const [gR, eR] = CalculateRates(input);
-console.log('day3, part1: ', parseInt(gR,2)*parseInt(eR,2));
+console.log('day3, part1: ', gR*eR);
+
+export const CalculateLifeSupport = ( inputString: string, func: findCommonBitFunction ) => {
+    let binaries = inputString.split('\n');
+
+    let index = 0;
+
+    while(true) {
+        let common = func(binaries, index);
+        
+        binaries = binaries.filter(str=>str[index] === common.toString());
+
+        console.log(binaries.length);
+
+        index++;
+        index = index % binaries[0].length;
+
+        if(binaries.length === 1) { break;}
+    }
+
+    console.log('   ' + binaries[0])
+
+    return parseInt(binaries[0], 2);
+}
+
+const ox = CalculateLifeSupport(input, findMostCommonBit);
+const co = CalculateLifeSupport(input, findLeastCommonBit);
+console.log('day3, part2: ', ox, co, (ox * co));
+

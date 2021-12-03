@@ -12,7 +12,7 @@ describe('Day 1', () => {
   });
 
   describe('CountIncreaseWindow', () => {
-    it('should find number of increases in input', () => {
+    it('should find number of increases in input within a window', () => {
 
       const increase = CountIncreaseWindow(sample1);
 

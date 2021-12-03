@@ -1,22 +1,24 @@
-import { CalculateRates } from './day3';
+import { CalculateLifeSupport, CalculateRates, findLeastCommonBit, findMostCommonBit } from './day3';
 import { sample } from './inputs/input3';
 
 describe('Day 3', () => {
   describe('CalculateRates', () => {
-    it('should find number of increases in input', () => {
+    it('should find correct gamma and epsilon rates', () => {
 
       const increase = CalculateRates(sample);
 
-      expect(increase).toStrictEqual(["10110", "01001"]);
+      expect(increase).toStrictEqual([22, 9]);
     });
   });
 
-  // describe('CalculateRealCoordinates', () => {
-  //   it('should find number of increases in input', () => {
+  describe('CalculateLifeSupport', () => {
+    it('should correct Oxygen production and Co2 scrubbing rates', () => {
 
-  //     const increase = CalculateRealCoordinates(sample);
+      const ox = CalculateLifeSupport(sample, findMostCommonBit);
+      expect(ox).toStrictEqual(23);
 
-  //     expect(increase).toStrictEqual([15,60]);
-  //   });
-  // });
+      const co2 = CalculateLifeSupport(sample, findLeastCommonBit);
+      expect(co2).toStrictEqual(10);
+    });
+  });
 });
