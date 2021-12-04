@@ -15,11 +15,11 @@
   "main": "src/index.js",
   "scripts": {
     "codecov": "codecov",
-    "coverage": "jest --collectCoverage",
+    "coverage": "jest --collectCoverage --silent",
     "dev": "nodemon ./src",
     "lint": "eslint .",
     "start": "ts-node ./src/index.ts",
-    "test": "jest --verbose",
+    "test": "jest --verbose --silent",
     "test:changes": "jest -o"
   },
   "dependencies": {
