@@ -5,11 +5,13 @@ describe('Day 4', () => {
   console.log = jest.fn();
   describe('runBingo', () => {
     it('should return winner boards unmarked numbers and last number of bingo game', () => {
+      const winners = runBingo(sample);
 
-      const [lastNum, sumOfUnmarked] = runBingo(sample);
+      expect(winners[0].pickedNumber).toStrictEqual(24);
+      expect(winners[0].number).toStrictEqual(188);
 
-      expect(lastNum).toStrictEqual(24);
-      expect(sumOfUnmarked).toStrictEqual(188);
+      expect(winners[winners.length - 1].pickedNumber).toStrictEqual(13);
+      expect(winners[winners.length - 1].number).toStrictEqual(148);
     });
   });
 });

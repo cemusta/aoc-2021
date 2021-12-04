@@ -1,6 +1,6 @@
-import { input } from "./inputs/input2";
+import { input } from './inputs/input2';
 
-export const CalculateCoordinates = (inputText:string) => {
+export const CalculateCoordinates = (inputText: string) => {
   const commands = inputText.split('\n').map((x) => String(x));
 
   let depth = 0;
@@ -12,7 +12,9 @@ export const CalculateCoordinates = (inputText:string) => {
     switch (direction) {
       case 'up':
         depth -= Number(value);
-        if(depth < 0) { depth = 0 }
+        if (depth < 0) {
+          depth = 0;
+        }
         break;
       case 'down':
         depth += Number(value);
@@ -23,13 +25,12 @@ export const CalculateCoordinates = (inputText:string) => {
       default:
         throw new Error('Invalid direction: ' + direction);
     }
-
   }
 
   return [forward, depth];
 };
 
-export const CalculateRealCoordinates = (inputText:string) => {
+export const CalculateRealCoordinates = (inputText: string) => {
   const commands = inputText.split('\n').map((x) => String(x));
 
   let depth = 0;
@@ -48,19 +49,20 @@ export const CalculateRealCoordinates = (inputText:string) => {
         break;
       case 'forward':
         forward += Number(value);
-        depth += aim*Number(value);
-        if(depth < 0) { depth = 0 }
+        depth += aim * Number(value);
+        if (depth < 0) {
+          depth = 0;
+        }
         break;
       default:
         throw new Error('Invalid direction: ' + direction);
     }
-
   }
 
   return [forward, depth];
 };
 
 const coordinates = CalculateCoordinates(input);
-console.log('day2, part1: ', coordinates[0]*coordinates[1]);
+console.log('day2, part1: ', coordinates[0] * coordinates[1]);
 const coordinates2 = CalculateRealCoordinates(input);
-console.log('day2, part2: ', coordinates2[0]*coordinates2[1]);
+console.log('day2, part2: ', coordinates2[0] * coordinates2[1]);
