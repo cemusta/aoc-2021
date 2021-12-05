@@ -7,10 +7,6 @@ type Line = {
   end: Point;
 };
 
-export const isVertical = (line: Line) => {
-  return line.start.y === line.end.y;
-};
-
 export const isDiagonal = (line: Line) => {
   return line.start.x !== line.end.x && line.start.y !== line.end.y;
 };
@@ -49,33 +45,17 @@ export const hydrothermalVent = (inputString: string, allowDiagonal: boolean = f
 };
 
 export const plotLine = (line: Line, matrix: number[][]) => {
-  if (isDiagonal(line)) {
-    // console.log('diagonal', line);
+  let len =
+    Math.abs(line.start.x - line.end.x) === 0
+      ? Math.abs(line.start.y - line.end.y)
+      : Math.abs(line.start.x - line.end.x);
+  let xDirection = line.start.x < line.end.x ? 1 : line.start.x === line.end.x ? 0 : -1;
+  let yDirection = line.start.y < line.end.y ? 1 : line.start.y === line.end.y ? 0 : -1;
 
-    let len = Math.abs(line.start.x - line.end.x);
-    let xDirection = line.start.x < line.end.x ? 1 : -1;
-    let yDirection = line.start.y < line.end.y ? 1 : -1;
-
-    for (let i = 0; i <= len; i++) {
-      matrix[line.start.y + yDirection * i][line.start.x + xDirection * i]++;
-    }
-  } else if (isVertical(line)) {
-    let x = line.start.x < line.end.x ? line.start.x : line.end.x;
-    let x2 = line.start.x > line.end.x ? line.start.x : line.end.x;
-    let y = line.start.y;
-    for (let i = x; i <= x2; i++) {
-      // console.log(y, i, x, x2);
-      matrix[y][i]++;
-    }
-  } else {
-    let y = line.start.y < line.end.y ? line.start.y : line.end.y;
-    let y2 = line.start.y > line.end.y ? line.start.y : line.end.y;
-    let x = line.start.x;
-    for (let i = y; i <= y2; i++) {
-      // console.log(x, i, y, y2);
-      matrix[i][x]++;
-    }
+  for (let i = 0; i <= len; i++) {
+    matrix[line.start.y + yDirection * i][line.start.x + xDirection * i]++;
   }
+
   return matrix;
 };
 
