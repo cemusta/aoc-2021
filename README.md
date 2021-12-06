@@ -13,9 +13,9 @@ For information about Advent of Code check here: <https://adventofcode.com/2021/
 
 ## Progress
 
-10 out of 50 stars.
+12 out of 50 stars.
 
-![progress bar 20 percent](https://progress-bar.dev/20)
+![progress bar 24 percent](https://progress-bar.dev/24)
 
 ## Running locally
 

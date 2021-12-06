@@ -2,7 +2,6 @@ import { hydrothermalVent } from './day5';
 import { sample } from './inputs/input5';
 
 describe('Day 5', () => {
-  console.log = jest.fn();
   describe('hydrothermalVent', () => {
     it('should return intersection counts of vent lines', () => {
       const intersections = hydrothermalVent(sample);
