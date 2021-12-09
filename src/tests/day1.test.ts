@@ -1,5 +1,5 @@
-import { CountIncrease, CountIncreaseWindow } from './day1';
-import { sample1 } from './inputs/input1';
+import { CountIncrease, CountIncreaseWindow } from '../day1';
+import { sample1 } from '../inputs/input1';
 
 describe('Day 1', () => {
   describe('CountIncrease', () => {

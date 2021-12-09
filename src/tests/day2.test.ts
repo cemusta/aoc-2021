@@ -1,5 +1,5 @@
-import { CalculateCoordinates, CalculateRealCoordinates } from './day2';
-import { sample } from './inputs/input2';
+import { CalculateCoordinates, CalculateRealCoordinates } from '../day2';
+import { sample } from '../inputs/input2';
 
 describe('Day 2', () => {
   describe('CalculateCoordinates', () => {

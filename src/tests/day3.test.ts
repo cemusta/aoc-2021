@@ -3,8 +3,8 @@ import {
   CalculateRates,
   findLeastCommonBit,
   findMostCommonBit,
-} from './day3';
-import { sample } from './inputs/input3';
+} from '../day3';
+import { sample } from '../inputs/input3';
 
 describe('Day 3', () => {
   describe('CalculateRates', () => {

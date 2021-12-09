@@ -1,5 +1,5 @@
-import { populateFish2 } from './day6';
-import { sample } from './inputs/input6';
+import { populateFish2 } from '../day6';
+import { sample } from '../inputs/input6';
 
 describe('Day 6', () => {
   describe('populateFish2', () => {

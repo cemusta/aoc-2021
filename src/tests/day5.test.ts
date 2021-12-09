@@ -1,5 +1,5 @@
-import { hydrothermalVent } from './day5';
-import { sample } from './inputs/input5';
+import { hydrothermalVent } from '../day5';
+import { sample } from '../inputs/input5';
 
 describe('Day 5', () => {
   describe('hydrothermalVent', () => {

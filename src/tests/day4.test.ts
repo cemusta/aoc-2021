@@ -1,5 +1,5 @@
-import { runBingo } from './day4';
-import { sample } from './inputs/input4';
+import { runBingo } from '../day4';
+import { sample } from '../inputs/input4';
 
 describe('Day 4', () => {
   describe('runBingo', () => {

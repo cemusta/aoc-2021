@@ -1,5 +1,5 @@
-import { countDigits, countEasyDigits, countRealDigits } from './day8';
-import { sample } from './inputs/input8';
+import { countDigits, countEasyDigits, countRealDigits } from '../day8';
+import { sample } from '../inputs/input8';
 
 describe('Day 8', () => {
   describe('countDigits', () => {

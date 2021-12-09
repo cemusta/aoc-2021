@@ -1,5 +1,5 @@
-import { calculateFuel, calculateFuel2, calculateLeastFuel } from './day7';
-import { sample } from './inputs/input7';
+import { calculateFuel, calculateFuel2, calculateLeastFuel } from '../day7';
+import { sample } from '../inputs/input7';
 
 describe('Day 7', () => {
   describe('calculateLeastFuel', () => {
