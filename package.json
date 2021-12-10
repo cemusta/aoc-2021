@@ -12,7 +12,6 @@
   },
   "license": "MIT",
   "author": "Cem Usta",
-  "main": "src/index.js",
   "scripts": {
     "codecov": "codecov",
     "coverage": "jest --collectCoverage --silent",

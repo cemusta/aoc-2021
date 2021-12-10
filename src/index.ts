@@ -1,2 +1,1 @@
-// export * from './day1';
-export * from './day2';
+console.log('check read me to figure how to use');
